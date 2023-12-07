@@ -202,6 +202,8 @@ import { POST_TRANSACTION, FETCH_TRANSACTION } from "../utils/ResDbApis"; // Imp
 import { sendRequest } from "../utils/ResDbClient"; // Import the sendRequest function
 import { app, auth } from '../../firebase';
 import { useParams } from "react-router-dom";
+import Navbar from "../Navbars/DemoNavbar";
+import Footer from "../Footers/SimpleFooter";
 
 // Inside your CandidatesList component
 
@@ -312,7 +314,8 @@ const CandidatesList = ({ selectedElection, votedCandidates, handleVote, isElect
 
   return (
     <div>
-      <Typography variant="h4">Candidates List</Typography>
+      <Navbar></Navbar>
+      <Typography variant="h4" style={{ color: "#FFFFFF",  marginTop: 100}}>Candidates List</Typography>
       {selectedElection && (
         <Typography variant="h5">Election: {selectedElection.name}</Typography>
       )}
@@ -321,7 +324,7 @@ const CandidatesList = ({ selectedElection, votedCandidates, handleVote, isElect
       )}
 
       {sampleCandidates.map((candidate) => (
-        <Card key={candidate.id} style={{ marginTop: 20 }}>
+        <Card key={candidate.id} style={{ marginTop: 20}}>
           <CardContent>
             <Typography variant="h6">{candidate.name}</Typography>
             <Button
@@ -343,6 +346,7 @@ const CandidatesList = ({ selectedElection, votedCandidates, handleVote, isElect
           </CardContent>
         </Card>
       ))}
+      <Footer />
     </div>
   );
 };

@@ -37,7 +37,7 @@
 //     signInWithEmailAndPassword(auth, values.email, values.pass)
 //       .then(async (res) => {
 //         setSubmitButtonDisabled(false);
-        
+
 //         navigate("/elections");
 //       })
 //       .catch((err) => {
@@ -64,7 +64,7 @@
 //             setValues((prev) => ({ ...prev, pass: event.target.value }))
 //           }
 //           placeholder="Enter Password"
-          
+
 //         />
 
 //         <div className={styles.footer}>
@@ -90,6 +90,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import Lottie from "lottie-react";
+import Animation from '../../assets/animation-vote.json'
+import Footer from '../../components/Footers/SimpleFooter'
 import { Container, Row, Col, Form, FormGroup, Label, Input, Button, Alert } from "reactstrap";
 import styles from "./Login.module.css";
 import loginImage from "../images/Untitled_design-removebg-preview.png"
@@ -131,13 +134,15 @@ function Login() {
   };
 
   return (
+    <div className="wrapper">
     <Container className={styles.container}>
       {/* <Row className="justify-content-center"> */}
-<Row className="justify-content-center">
-      <Col md="6" className={styles.imageCol}>
+      {/* <Row className="justify-content-center"> */}
+      <Row>
+        <Col md={{ size: 6, offset: 1 }} className={styles.imageCol}>
           {/* Left half of the page for the image */}
           <div className={styles.imageContainer}>
-            <img src={loginImage} alt="Login" className={styles.loginImage} />
+            {/* <img src={loginImage} alt="Login" className={styles.loginImage} /> */}
           </div>
         </Col>
         <Col md="6">
@@ -191,7 +196,12 @@ function Login() {
           </div>
         </Col>
       </Row>
+      <div style={{ width: '20%', height: '20%', position: 'absolute', top: '200px', left: '200px' }}>
+        <Lottie animationData={Animation} />
+      </div>
     </Container>
+    <Footer></Footer>
+    </div>
   );
 }
 

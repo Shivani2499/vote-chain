@@ -183,6 +183,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import Footer from "../Footers/SimpleFooter"
+import Lottie from "lottie-react";
+import Animation from '../../assets/animation-vote-2.json'
+import { Colors } from "reactstrap";
+import { Typography } from "reactstrap";
 import { auth } from "../../firebase";
 import {
   Container,
@@ -196,6 +201,7 @@ import {
 } from "reactstrap";
 import styles from "./Signup.module.css";
 import signupImage from "../images/Untitled_design-removebg-preview.png"; // Replace with your image path
+import { WidthFull } from "@mui/icons-material";
 
 function Signup() {
   const navigate = useNavigate();
@@ -239,63 +245,64 @@ function Signup() {
   };
 
   return (
-    <div className={styles.container}>
-      <Container fluid>
-        <Row>
-          <Col md={{ size: 4, offset: 1 }}>
-            <div className={styles.innerBox}>
-              <h1 className={styles.heading}>Signup</h1>
-              <Form>
-                <FormGroup>
-                  <Label for="name">Name</Label>
-                  <Input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    value={values.name}
-                    onChange={(e) => handleInputChange(e, "name")}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="email">Email</Label>
-                  <Input
-                    type="email"
-                    id="email"
-                    placeholder="Enter email address"
-                    value={values.email}
-                    onChange={(e) => handleInputChange(e, "email")}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="password">Password</Label>
-                  <Input
-                    type="password"
-                    id="password"
-                    placeholder="Enter password"
-                    value={values.pass}
-                    onChange={(e) => handleInputChange(e, "pass")}
-                  />
-                </FormGroup>
-                <div className={styles.footer}>
-                  <b className={styles.error}>{errorMsg}</b>
-                  <Button
-                    color="primary"
-                    onClick={handleSubmission}
-                    disabled={submitButtonDisabled}
-                  >
-                    Signup
-                  </Button>
-                  <p>
-                    Already have an account?{" "}
-                    <span>
-                      <Link to="/login">Login</Link>
-                    </span>
-                  </p>
-                </div>
-              </Form>
-            </div>
-          </Col>
-          <Col md={6}>
+    <div className="wrapper">
+      <div className={styles.container} >
+        <Container fluid>
+          <Row>
+            <Col md={{ size: 6, offset: 1 }}>
+              <div className={styles.innerBox}>
+                <h1 className={styles.heading}>Signup</h1>
+                <Form>
+                  <FormGroup>
+                    <blockquote className="name text-left" >Name</blockquote>
+                    <Input
+                      type="text"
+                      id="name"
+                      placeholder="Enter your name"
+                      value={values.name}
+                      onChange={(e) => handleInputChange(e, "name")}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <blockquote className="email text-left">Email</blockquote>
+                    <Input
+                      type="email"
+                      id="email"
+                      placeholder="Enter email address"
+                      value={values.email}
+                      onChange={(e) => handleInputChange(e, "email")}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <blockquote className="password text-left">Password</blockquote>
+                    <Input
+                      type="password"
+                      id="password"
+                      placeholder="Enter password"
+                      value={values.pass}
+                      onChange={(e) => handleInputChange(e, "pass")}
+                    />
+                  </FormGroup>
+                  <div className={styles.footer}>
+                    <b className={styles.error}>{errorMsg}</b>
+                    <Button
+                      color="primary"
+                      onClick={handleSubmission}
+                      disabled={submitButtonDisabled}
+                    >
+                      Signup
+                    </Button>
+                    <p>
+                      Already have an account?{" "}
+                      <span>
+                        <Link to="/login">Login</Link>
+                      </span>
+                    </p>
+                  </div>
+                </Form>
+              </div>
+            </Col>
+            {/* <Col md={6}>
             <div className={styles.imageContainer}>
               <img
                 src={signupImage}
@@ -303,9 +310,19 @@ function Signup() {
                 className={styles.signupImage}
               />
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </Col> */}
+          </Row>
+        </Container>
+        {/* <Lottie animationData={Animation}/> */}
+
+        <div style={{ width: '20%', height: '20%', position: 'absolute', top: '200px', left: '100px' }}>
+          <Lottie animationData={Animation} />
+        </div>
+
+        {/* </Lottie> */}
+      </div>
+      <Footer>
+      </Footer>
     </div>
   );
 }
