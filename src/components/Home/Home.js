@@ -1,130 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { makeStyles } from "@material-ui/core/styles";
-// import Button from "@material-ui/core/Button";
-// import Typography from "@material-ui/core/Typography";
-// import Container from "@material-ui/core/Container";
-// import Grid from "@material-ui/core/Grid";
-
-// const useStyles = makeStyles((theme) => ({
-//   container: {
-//     marginTop: theme.spacing(5),
-//   },
-//   header: {
-//     marginBottom: theme.spacing(3),
-//   },
-//   buttonContainer: {
-//     marginTop: theme.spacing(2),
-//   },
-// }));
-
-// function Home(props) {
-//   const classes = useStyles();
-
-//   return (
-//     <Container className={classes.container}>
-//       <Grid container spacing={3}>
-//         <Grid item xs={12}>
-//           <Typography variant="h3" align="center" className={classes.header}>
-//             Welcome to the Voting Website
-//           </Typography>
-//         </Grid>
-//         <Grid item xs={6} align="center">
-//           <Link to="/login">
-//             <Button variant="contained" color="primary">
-//               Login
-//             </Button>
-//           </Link>
-//         </Grid>
-//         <Grid item xs={6} align="center">
-//           <Link to="/signup">
-//             <Button variant="contained" color="secondary">
-//               Signup
-//             </Button>
-//           </Link>
-//         </Grid>
-//         <Grid item xs={12} className={classes.buttonContainer} align="center">
-//           <Typography variant="h5">
-//             {props.name ? `Welcome - ${props.name}` : "Login to vote"}
-//           </Typography>
-//         </Grid>
-//       </Grid>
-//     </Container>
-//   );
-// }
-
-// export default Home;
-
-//2:25am
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { makeStyles } from "@material-ui/core/styles";
-// import AppBar from "@material-ui/core/AppBar";
-// import Toolbar from "@material-ui/core/Toolbar";
-// import Button from "@material-ui/core/Button";
-// import Typography from "@material-ui/core/Typography";
-// import Container from "@material-ui/core/Container";
-// import Grid from "@material-ui/core/Grid";
-
-// const useStyles = makeStyles((theme) => ({
-//   container: {
-//     marginTop: theme.spacing(8),
-//   },
-//   header: {
-//     marginBottom: theme.spacing(3),
-//   },
-//   navbar: {
-//     display: "flex",
-//     justifyContent: "flex-end",
-//   },
-//   title: {
-//     marginRight: "auto", // Pushes the title to the extreme left
-//   },
-// }));
-
-// function Home(props) {
-//   const classes = useStyles();
-
-//   return (
-//     <div>
-//       <AppBar position="fixed">
-//         <Toolbar>
-//           <Typography variant="h6" className={classes.title}>
-//             Voting Website
-//           </Typography>
-//           <div className={classes.navbar}>
-//             <Button color="inherit" component={Link} to="/login">
-//               Voter Login
-//             </Button>
-//             <Button color="inherit" component={Link} to="/signup">
-//               Voter Signup
-//             </Button>
-//             <Button color="inherit" component={Link} to="/login">
-//               Admin Login
-//             </Button>
-//           </div>
-//         </Toolbar>
-//       </AppBar>
-//       <Container className={classes.container}>
-//         <Grid container spacing={3}>
-//           <Grid item xs={12}>
-//             <Typography variant="h3" align="center" className={classes.header}>
-//               Welcome 
-//             </Typography>
-//           </Grid>
-//           <Grid item xs={12} align="center">
-//             <Typography variant="h5">
-//               {props.name ? `Welcome - ${props.name}` : "Login to vote"}
-//             </Typography>
-//           </Grid>
-//         </Grid>
-//       </Container>
-//     </div>
-//   );
-// }
-
-// export default Home;
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -141,10 +14,24 @@ import { Row, Col } from "reactstrap";
 import CardContent from "@material-ui/core/CardContent";
 import Navbar from "../Navbars/DemoNavbar";
 import Footer from "../Footers/SimpleFooter";
-// import {
-//   Button
-// } from "reactstrap";
+import voting_home from "../../components/images/voting_home_2.svg";
+import signup from "../../components/images/signup.svg";
+import election from "../../components/images/election.svg";
+import report from "../../components/images/report.svg";
+import secure from "../../components/images/secure.svg";
+import transparent from "../../components/images/Electronic Vote Visualisation in the Admin panel.svg";
+import immutable from "../../components/images/Immutable_votes.svg";
+import singleVoting from "../../components/images/Single_voting_instance.svg";
+import restrictedAccess from "../../components/images/Restricted_access.svg";
+import { Button } from "reactstrap";
 
+// const SvgGrid = () => {
+//   const svgImages = [
+//     restrictedAccess,
+//     singleVoting,
+//     immutable,
+//     transparent
+//   ];
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -168,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 function Home(props) {
   const classes = useStyles();
 
@@ -180,9 +68,9 @@ function Home(props) {
         <div className="page-header header-filter">
           <Container>
             <div className="content-center brand">
-              <h4 className="d-none d-sm-block" style={{ color: "#FFFBBA" }}>
+              {/* <h4 className="d-none d-sm-block" style={{ color: "#FFFBBA" }}>
               A secure and transparent e-voting system
-              </h4>
+              </h4> */}
             </div>
           </Container>
         </div>
@@ -190,99 +78,137 @@ function Home(props) {
           <Container>
             <Row className="row-grid justify-content-between">
               <Col md="6">
+                <div className="px-md-4 text-left" >
+                  <hr className="line-success" />
+                  <h1 className="display-1" >VoteChain</h1>
+                  <h3 style={{ color: "#575989" }}>Make Your Voice Heard: Vote for Change</h3>
+                  <h5 style={{ color: "#575989" , marginTop: '15px'}}>Revolutionize democracy with our secure and user-friendly e-voting system. Experience the future of voting – convenient, transparent, and accessible to all.</h5>
+                  <h5 style={{ color: "#575989", marginTop: '15px', marginBottom: '15px'}}>Learn more about us on our blog!</h5>
+                  <div className="btn-wrapper profile">
+                    <Button
+                      color="primary"
+                      href="https://naitikjain3071.wixsite.com/my-site">
+                      Learn more
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+              <Col md="6">
                 <img
                   alt="..."
                   className="img-fluid floating"
-                  src={require("../../components/images/Untitled_design-removebg-preview.png")}
+                  src={voting_home}
                 />
-              </Col>
-              <Col md="6">
-                <div className="px-md-4">
-                  <hr className="line-success" />
-                  <h3 style={{color:"#FFFFFF"}}>Make Your Voice Heard: Vote for Change</h3>
-                  <p style={{color:"#FFFFFF"}}>
-                  The "VoteChain" initiative leverages ResilientDB, a blockchain technology, to establish a secure and transparent electronic voting system. This platform emphasizes the permanence of votes, allowing each voter to cast a single vote. Candidates can voluntarily withdraw their candidacy, and voters can transition to candidates by furnishing their candidacy details. Importantly, the voting and candidacy periods will be distinct and non-overlapping.
-                  <p style={{ marginTop: "3rem", color:"#FFFFFF"}}>
-                    </p>
-                  The foundational framework powering this system will be{" "}
-                    <a href="https://resilientdb.com" style={{color:"#FCEA3D"}}>Resilient DB</a>, ensuring robustness and integrity. In addition to these core functionalities, the platform will also address specific operational requirements. Election administrators will have the capability to create multiple elections, with each election necessitating approval from a super admin. Access to election results will be restricted until the voting phase concludes, ensuring the integrity of the process.
-                  </p>
-                </div>
               </Col>
             </Row>
           </Container>
         </section>
-        {/* <section className="section section-lg"> */}
-            {/* <AppBar position="fixed"> */}
-            {/* <Toolbar>
-            <h6 className={classes.title}
-            color="default">
-            VoteChain
-            </h6>
-            <div className={classes.navbar}>
-            <Button color="inherit" component={Link} to="/login">
-              Voter Login
-            </Button>
-            <Button color="inherit" component={Link} to="/signup">
-              Voter Signup
-            </Button>
-            <Button color="inherit" component={Link} to="/login">
-              Admin Login
-            </Button>
-            </div>
-            </Toolbar> */}
-            {/* </AppBar> */}
-          <Container className="classes.usestyles">
-            {/* <Grid item xs={12}>
-            <Typography variant="h3">
-            {props.name ? `Welcome - ${props.name}` : "Login to vote"}
-            </Typography>
-            </Grid> */}
-            {/* <h3 align="center" 
-            color="warning">
-            VoteChain
-            </h3> */}
-            <div style={{ padding: 30 }} >
-              <Grid container spacing={3}>
-                <Grid item xs={12} sm={4}>
-                  <Card className={classes.card}>
-                    <CardContent>
-                      <h6 style={{ color: "#626FDF" }}>Voter Registration</h6>
-                      <blockquote className="blockquote">
-                        Get started on your civic journey! Register to vote and ensure your voice is counted in the upcoming elections. Your vote is your power – let's make a difference together.
-                      </blockquote>
-                    </CardContent>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                  <Card className={classes.card}>
-                    <CardContent>
-                      <h6  style={{ color: "#626FDF" }}>Election Day Details</h6>
-                      <blockquote className="blockquote">
-                        Mark your calendar! Find essential information about election dates, polling locations, and voting hours. Be prepared to make your voice heard on Election Day – your participation is crucial for a thriving democracy.
-                      </blockquote>
-                    </CardContent>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                  <Card className={classes.card}>
-                    <CardContent>
-                      <h6  style={{ color: "#626FDF" }}>Candidate Profiles and Issues
-                      </h6>
-                      <blockquote className="blockquote">
-                      Know your candidates and their stands on key issues. Explore comprehensive profiles to make an informed decision. Your vote shapes policies and influences change. Dive into the details and vote for a future you believe in.
-                      </blockquote>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              </Grid>
+
+        <div className="page-header header-filter">
+          <Container>
+            <div className="content-center brand">
+              <hr className="line-success" />
+              <h1 className="display-2" >How it works?</h1>
             </div>
           </Container>
-        {/* </section> */}
         </div>
-        <Footer />
-      </div>
-      );
-}
 
-      export default Home;
+        <Container className="classes.usestyles">
+          <div style={{ padding: 30 }} >
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={4}>
+                <Card className={classes.card}>
+                  <CardContent>
+                    <img
+                      alt="..."
+                      src={signup}
+                      style={{ width: '300px', height: '300px' }} />
+                    <h4 style={{ color: "#626FDF" }}>Voter registration</h4>
+                    <h5>
+                      Get started on your civic journey! Register to vote and ensure your voice is counted in the upcoming elections. Your vote is your power – let's make a difference together.
+                    </h5>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Card className={classes.card}>
+                  <CardContent>
+                    <img
+                      alt="..."
+                      src={election}
+                      style={{ width: '300px', height: '300px' }} />
+                    <h4 style={{ color: "#626FDF" }}>Election day details</h4>
+                    <h5>
+                      Mark your calendar! Find essential information about election dates, polling locations, and voting hours. Be prepared to make your voice heard on Election Day – your participation is crucial for a thriving democracy.
+                    </h5>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Card className={classes.card}>
+                  <CardContent>
+                    <img
+                      alt="..."
+                      src={report}
+                      style={{ width: '300px', height: '300px' }} />
+                    <h4 style={{ color: "#626FDF" }}>Candidate profiles and issues
+                    </h4>
+                    <h5>
+                      Know your candidates and their stands on key issues. Explore comprehensive profiles to make an informed decision. Your vote shapes policies and influences change. Dive into the details and vote for a future you believe in.
+                    </h5>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+            <div className="content-center brand">
+              <hr className="line-success" />
+              <h1 className="display-2" >Features</h1>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    alt="..."
+                    style={{ width: '300px', height: '300px' }}
+                    className="img-fluid floating"
+                    src={restrictedAccess}
+                  />
+                  <h5 style={{ marginTop: '25px', color: '#575989' }}>Limited access</h5>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    alt="..."
+                    style={{ width: '300px', height: '300px' }}
+                    className="img-fluid floating"
+                    src={immutable}
+                  />
+                   <h5 style={{ marginTop: '25px', color: '#575989' }}>Immutable votes</h5>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    alt="..."
+                    style={{ width: '300px', height: '300px' }}
+                    className="img-fluid floating"
+                    src={transparent}
+                  />
+                   <h5 style={{ marginTop: '25px', color: '#575989' }}>Secure and Transparent Election</h5>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    alt="..."
+                    style={{ width: '300px', height: '300px' }}
+                    className="img-fluid floating"
+                    src={singleVoting}
+                  />
+                   <h5 style={{ marginTop: '25px', color: '#575989' }}>Single voting</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+
+        {/* </section> */}
+      </div>
+      <Footer />
+    </div>
+  );
+}
+export default Home;

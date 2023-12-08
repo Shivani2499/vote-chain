@@ -40,25 +40,6 @@ export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
-  React.useEffect(() => {
-    window.addEventListener("scroll", changeColor);
-    return function cleanup() {
-      window.removeEventListener("scroll", changeColor);
-    };
-  }, []);
-  const changeColor = () => {
-    if (
-      document.documentElement.scrollTop > 99 ||
-      document.body.scrollTop > 99
-    ) {
-      setColor("bg-info");
-    } else if (
-      document.documentElement.scrollTop < 100 ||
-      document.body.scrollTop < 100
-    ) {
-      setColor("navbar-transparent");
-    }
-  };
   const toggleCollapse = () => {
     document.documentElement.classList.toggle("nav-open");
     setCollapseOpen(!collapseOpen);
@@ -70,19 +51,21 @@ export default function IndexNavbar() {
     setCollapseOut("");
   };
   return (
-    <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
-      <Container>
-        <div className="navbar-translate">
-          <img src={logo} alt="logo" width="50" height="50" />
+    <Navbar className={"fixed-top "} color-on-scroll="100" expand="lg">
+      <Container fluid>
+
+
+        {/* <div className="navbar-translate">
+          <img src={logo} alt="logo" width="50" height="50" /> */}
           {/* <div style={{ marginTop:'1%' }}> */}
-            <NavbarBrand to="/" tag={Link} id="navbar-brand">
+            {/* <NavbarBrand to="/" tag={Link} id="navbar-brand">
               <span style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>VoteChain</span>
-            </NavbarBrand>
+            </NavbarBrand> */}
           {/* </div> */}
           {/* <UncontrolledTooltip placement="bottom" target="navbar-brand">
             Designed and Coded by Creative Tim
           </UncontrolledTooltip> */}
-          <button
+          {/* <button
             aria-expanded={collapseOpen}
             className="navbar-toggler navbar-toggler"
             onClick={toggleCollapse}
@@ -91,14 +74,44 @@ export default function IndexNavbar() {
             <span className="navbar-toggler-bar bar2" />
             <span className="navbar-toggler-bar bar3" />
           </button>
-        </div>
-        <Collapse
+        </div> */}
+        {/* <div className="navbar-translate d-flex align-items-center">
+  <img src={logo} alt="logo" width="50" height="50" className="mr-2" />
+  <NavbarBrand to="/" tag={Link} id="navbar-brand">
+    <span style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>VoteChain</span>
+  </NavbarBrand>
+  <button
+    aria-expanded={collapseOpen}
+    className="navbar-toggler navbar-toggler"
+    onClick={toggleCollapse}
+  >
+    <span className="navbar-toggler-bar bar1" />
+    <span className="navbar-toggler-bar bar2" />
+    <span className="navbar-toggler-bar bar3" />
+  </button>
+</div> */}
+<div className="navbar-translate d-flex align-items-center">
+  <img src={logo} alt="logo" width="100" height="100" className="mr-3 ml-0" />
+  <NavbarBrand to="/" tag={Link} id="navbar-brand">
+    <span style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>VoteChain</span>
+  </NavbarBrand>
+  <button
+    aria-expanded={collapseOpen}
+    className="navbar-toggler navbar-toggler"
+    onClick={toggleCollapse}
+  >
+    <span className="navbar-toggler-bar bar1" />
+    <span className="navbar-toggler-bar bar2" />
+    <span className="navbar-toggler-bar bar3" />
+  </button>
+  {/* <Collapse
           className={"justify-content-end " + collapseOut}
           navbar
           isOpen={collapseOpen}
           onExiting={onCollapseExiting}
           onExited={onCollapseExited}
-        >
+        > */}
+        
           <div className="navbar-collapse-header">
             <Row>
               <Col className="collapse-brand" xs="6">
@@ -159,6 +172,10 @@ export default function IndexNavbar() {
             {/* </NavItem> */}
           </Nav>
         </Collapse>
+</div>
+
+
+       
       </Container>
     </Navbar>
   );
